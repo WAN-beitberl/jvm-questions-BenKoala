@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------------------
+THE JVM
+BY : BEN DAVID IVGI
+DATE : 13.11.2022
+--------------------------------------------------------------------------------------------
+1. The main differences between the stack and the heap usage by the JVM is:
+- Stack is only used to store methods that are currently running.
+- Mainly, larger data structures (non primitive) will be stored on the heap,
+  and the stack will only contain a reference to it.
+- Stack area is smaller.
+2. The JVM architecture is:
+- Class loader ( Used to load .class files. first step of running code)
+- Class area stores methods and class fields.
+- Heap area where objects are allocated.
+ - Stack area where local variables are stored.
+ - PC register with the current instruction's address.
+ - Native method stack (stores the native functions used by the program).
+ - Engine that reads bytecode and executes the commands (and compiles).
+* Did not fully understand the Java Native interface.
+3. We cannot run native, as machine code will not be executed (or read) the same way on every computer or operating system,
+   When using JVM, the JVM knows on what operating system it runs, and so can execute the code from bytecode (middle language) to machine code correcty.
+   That way, assuming one would like to send his code to another computer, the JVM will be able to run the code on the other computer as well,
+   as to execute the bytecode to the right machine code.
+4. To my understanding, bytecode works like assembley, a middle language between java and machine code.
+   The bytecode can be interpreted by any JVM, and it is being executed according to the current computer's settings.
+5. The memory ares used by the JVM:
+ - Class ( Store methods and class fields).
+ - Heap ( Store complex objects).
+ - Stack ( Store primitive variables, local and references to the Heap stored objects).
+ - PC Register ( Stores the address of the current line that is being executed).
+ - Native method stack (Stores the program's built in methods).
+6. Just in time compilation is being used to compile the bytecode to the computer's CPU's machine code.
+ it runs as your program starts running (found contradicting sources).
